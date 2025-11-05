@@ -17,6 +17,10 @@ class NewDynamicArray: public DynamicArray{
             }
             return sum / size;
         }
+        NewDynamicArray(const DynamicArray& other): DynamicArray(other) {};
+        ~NewDynamicArray(){
+            delete[] data;
+        };
         NewDynamicArray* sort(){
             NewDynamicArray* sorted_array = new NewDynamicArray(size);
             for (int i = 0; i < size; i++){
